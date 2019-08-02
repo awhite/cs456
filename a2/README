@@ -1,0 +1,39 @@
+To compile:
+
+	> make
+
+To run:
+
+	Start the emulator:
+
+	> ./nEmulator \
+		<emulator's-receiving-UDP-numbers-in-forward(sender)-direction> \
+		<receiver-network-address> \
+		<receiver-UDP-port> \
+		<emulator's-receiving-UDP-numbers-in-backward(receiver)-direction> \
+		<sender-network-address> \
+		<sender-UDP-port> \
+		<max-delay-of-link(milliseconds)> \
+		<packet-discard-probability> \
+		0
+
+
+	Start the receiver:
+
+	> java Receiver \
+		<hostname-where-emulator-is-running> \
+		<emulator's-receiving-UDP-numbers-in-backward(receiver)-direction> \
+		<receiver-UDP-port> \
+		<filename-for-received-data>
+
+
+	Start the sender:
+
+	> java Sender \
+		<hostname-where-emulator-is-running> \
+		<emulator's-receiving-UDP-numbers-in-forward(sender)-direction> \
+		<sender-UDP-port> \
+		<filename-for-data-to-send>
+
+
+Built and tested on ubuntu1804-008, ubuntu1804-004 and ubuntu1804-002, openjdk version "1.8.0_212", GNU Make 4.1
